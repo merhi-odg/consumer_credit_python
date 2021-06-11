@@ -86,7 +86,7 @@
             "name": "age",
             "type": "string",
             "dataClass": "categorical",
-            "role": "predictor",
+            "role": "non_predictor",
             "protectedClass": true,
             "driftCandidate": true,
             "specialValues": [],
