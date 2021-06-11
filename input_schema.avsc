@@ -113,7 +113,7 @@
             "scoringOptional": true
         },
         {
-            "name": "prediction",
+            "name": "score",
             "type": "int",
             "dataClass": "categorical",
             "role": "score",

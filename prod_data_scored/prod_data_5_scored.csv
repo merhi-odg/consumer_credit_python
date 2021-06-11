@@ -1,4 +1,4 @@
-id,loan_amnt,home_ownership,annual_inc,dti,int_rate,tax_liens,credit_age,age,loan_status,probability,prediction
+id,loan_amnt,home_ownership,annual_inc,dti,int_rate,tax_liens,credit_age,age,loan_status,probability,score
 106445,10800,RENT,72000.0,6.7,0.1433,0,7049,UNDER_FORTY,0,0.4886484705711025,0
 79934,20000,OWN,150000.0,15.42,0.1155,0,6957,UNDER_FORTY,0,0.34700711577567767,0
 88701,15250,RENT,50000.0,6.94,0.1311,0,6075,UNDER_FORTY,0,0.5073846086099429,0

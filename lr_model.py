@@ -22,7 +22,7 @@ def action(datum):
     prep_datum = preprocess(datum)
     datum = pd.concat([datum, prep_datum], axis=1)
     datum["probability"] = prediction(datum)
-    datum["prediction"] = datum.probability.apply(lambda x: x > threshold).astype(int)
+    datum["score"] = datum.probability.apply(lambda x: x > threshold).astype(int)
     yield datum.loc[
         :,
         [
@@ -37,7 +37,7 @@ def action(datum):
             "age",
             "loan_status",
             "probability",
-            "prediction",
+            "score",
         ],
     ].to_dict(orient="records")
 
