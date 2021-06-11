@@ -1,9 +1,57 @@
 {
-  "type":"record",
-  "name":"cc_output",
-  "fields": [
-    {"name":"id", "type":"int"},
-    {"name":"probability", "type":"float"},
-    {"name":"prediction", "type":"int"}
-    ]
+    "type": "array",
+    "items": {
+        "type": "record",
+        "name": "output_schema",
+        "fields": [
+            {
+                "name": "id",
+                "type": "int"
+            },
+            {
+                "name": "loan_amnt",
+                "type": "double"
+            },
+            {
+                "name": "home_ownership",
+                "type": "string"
+            },
+            {
+                "name": "annual_inc",
+                "type": "double"
+            },
+            {
+                "name": "dti",
+                "type": "double"
+            },
+            {
+                "name": "int_rate",
+                "type": "double"
+            },
+            {
+                "name": "tax_liens",
+                "type": "double"
+            },
+            {
+                "name": "credit_age",
+                "type": "int"
+            },
+            {
+                "name": "age",
+                "type": "string"
+            },
+            {
+                "name": "loan_status",
+                "type": "int"
+            },
+            {
+                "name": "probability",
+                "type": "double"
+            },
+            {
+                "name": "prediction",
+                "type": "int"
+            }
+        ]
+    }
 }

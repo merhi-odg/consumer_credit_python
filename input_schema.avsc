@@ -1,16 +1,126 @@
 {
-  "type":"record",
-  "name":"cc_input",
-  "fields": [
-    {"name":"id", "type":"int"},
-    {"name":"loan_amnt", "type":"float"},
-    {"name":"home_ownership", "type":"string"},
-    {"name":"annual_inc", "type":"float"},
-    {"name":"dti", "type":"float"},
-    {"name":"int_rate", "type":"float"},
-    {"name":"tax_liens", "type":"float"},
-    {"name":"loan_status", "type":"int"},
-    {"name":"forty_plus_indicator", "type":"string"},
-    {"name":"credit_age", "type":"int"}
+    "type": "record",
+    "name": "input_schema",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int",
+            "dataClass": "numerical",
+            "role": "identifier",
+            "protectedClass": false,
+            "driftCandidate": false,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "loan_amnt",
+            "type": "double",
+            "dataClass": "numerical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "home_ownership",
+            "type": "string",
+            "dataClass": "categorical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "annual_inc",
+            "type": "double",
+            "dataClass": "numerical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "dti",
+            "type": "double",
+            "dataClass": "numerical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "int_rate",
+            "type": "double",
+            "dataClass": "numerical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "tax_liens",
+            "type": "double",
+            "dataClass": "numerical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "credit_age",
+            "type": "int",
+            "dataClass": "numerical",
+            "role": "predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": false
+        },
+        {
+            "name": "age",
+            "type": "string",
+            "dataClass": "categorical",
+            "role": "predictor",
+            "protectedClass": true,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": true
+        },
+        {
+            "name": "loan_status",
+            "type": "int",
+            "dataClass": "categorical",
+            "role": "label",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": true
+        },
+        {
+            "name": "probability",
+            "type": "double",
+            "dataClass": "numerical",
+            "role": "non_predictor",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": true
+        },
+        {
+            "name": "prediction",
+            "type": "int",
+            "dataClass": "categorical",
+            "role": "score",
+            "protectedClass": false,
+            "driftCandidate": true,
+            "specialValues": [],
+            "scoringOptional": true
+        }
     ]
 }
