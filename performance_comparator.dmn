@@ -28,7 +28,7 @@
           <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07v4w07">
-          <text>"AUC under threshold of 0.90"</text>
+          <text>"AUC under threshold of 0.65"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ggwcp6">
