@@ -64,7 +64,7 @@
         },
         {
             "name": "tax_liens",
-            "type": "double",
+            "type": "int",
             "dataClass": "numerical",
             "role": "predictor",
             "protectedClass": false,
