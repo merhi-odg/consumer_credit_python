@@ -1,1 +1,7 @@
 shap==0.35.0
+aequitas==0.42.0
+numpy==1.21.2
+pandas==1.2.3
+scikit-learn==0.22
+scipy==1.7.1
+statsmodels==0.12.2
