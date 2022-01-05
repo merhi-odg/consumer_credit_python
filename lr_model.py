@@ -40,7 +40,7 @@ def action(datum):
             "probability",
             "score",
         ],
-    ].to_dict(orient="records")
+    ].to_dict(orient="records")[0]
 
     
 # modelop.metrics
