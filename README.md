@@ -3,7 +3,7 @@ This is a model that flexes many aspects of ModelOp Center Monitoring.
 
 ## Scoring Jobs
 
-Scoring jobs should be run on a runtime with **Python >= 3.7** (numpy version requirement; see https://github.com/numpy/numpy/releases/tag/v1.21.2).
+Scoring jobs should be run on a runtime with **Python >= 3.7, < 3.9** (numpy version requirement; see https://github.com/numpy/numpy/releases/tag/v1.21.2).
 
 ### Sample Inputs
 
