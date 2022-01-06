@@ -3,8 +3,9 @@
 
 import pandas as pd
 import numpy as np
-from scipy.special import logit
 import pickle
+from scipy.special import logit
+from sklearn.metrics import roc_auc_score, f1_score, confusion_matrix
 
 
 # modelop.init
@@ -39,7 +40,40 @@ def action(datum):
             "probability",
             "score",
         ],
-    ].to_dict(orient="records")
+    ].to_dict(orient="records")[0]
+
+    
+# modelop.metrics
+def metrics(data):
+    
+    # dictionary to hold final metrics
+    metrics = {}
+
+    # calculate metrics
+    f1 = f1_score(data["loan_status"], data["score"])
+    auc_val = roc_auc_score(data["loan_status"], data["probability"])
+    cm = confusion_matrix(data["loan_status"], data["score"])
+    labels = ["Default", "Pay Off"]
+    cm = matrix_to_dicts(cm, labels)
+
+    # Assigning metrics to output dictionary
+    # Top-level metrics
+    metrics["f1_score"] = f1
+    metrics["auc"] = auc_val
+    
+    metrics["performance"] = [
+        {
+            "test_name": "Classification Metrics",
+            "test_category": "performance",
+            "test_type": "classification_metrics",
+            "test_id": "performance_classification_metrics",
+            "values": {"f1_score": f1, "auc": auc_val, "confusion_matrix": cm},
+        }
+    ]
+
+    
+    # MOC expects the action function to be a *yield* function
+    yield metrics
 
 
 def preprocess(data):
@@ -54,3 +88,10 @@ def preprocess(data):
 
 def prediction(data):
     return lr_model.predict_proba(data.loc[:, features])[:, 1]
+
+
+def matrix_to_dicts(matrix, labels):
+    cm = []
+    for idx, label in enumerate(labels):
+        cm.append(dict(zip(labels, matrix[idx, :].tolist())))
+    return cm

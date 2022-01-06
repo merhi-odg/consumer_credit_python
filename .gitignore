@@ -1,2 +1,5 @@
 .vscode/settings.json
 confusion_matrix_calc.py
+.python-version
+lr_model_trainer.py
+lr_model_coefs.pkl
